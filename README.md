@@ -1,7 +1,7 @@
 # hetfamily — heterogeneous treatment effects in jamovi
 
 A jamovi module for finding out who gains from a treatment in a randomized experiment: generic machine learning inference on heterogeneous effects
-(Chernozhukov, Demirer, Duflo and Fernandez-Val), priority curves, effect profiles and treatment rules. Chinese summary: [README.zh.md](README.zh.md).
+(Chernozhukov, Demirer, Duflo and Fernandez-Val), priority curves, effect profiles and treatment rules. Chinese summary: [README.zh.md](README.zh.md). Japanese summary: [README.ja.md](README.ja.md).
 
 ## Analyses (jamovi menu: Heterogeneity)
 
