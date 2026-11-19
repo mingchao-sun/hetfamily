@@ -1,0 +1,63 @@
+---
+title: Heterogeneous Treatment Effects Family
+name: hetfamily
+version: 1.0.0
+jms: '1.0'
+authors:
+  - Mingchao Sun
+maintainer: Mingchao Sun <mingchao.sun@hotmail.com>
+date: '2026-11-20'
+type: R
+description: >-
+  Who benefits from a treatment? Generic machine learning inference on
+  heterogeneous effects in randomized experiments (best linear predictor, sorted
+  group effects, classification analysis) and the value of a treatment rule that
+  treats the units with the largest predicted effects.
+datasets:
+  - name: Simulated heterogeneous trial
+    path: sim_het_trial.csv
+    description: >-
+      Simulated, 2000 people randomized with probability 0.5 to control or
+      treated: id, arm, age, female, income, baseline, edu, urban, hhsize,
+      health, noise1, noise2 and the outcome y. The effect is 0.3 + 0.5 female -
+      0.4 baseline (average 0.55; 87% of people gain); the other covariates do
+      not matter for the effect. Use for all analyses.
+  - name: Simulated homogeneous trial
+    path: sim_homogeneous_trial.csv
+    description: >-
+      Simulated, 600 people randomized to control or treated: id, arm, x1, x2,
+      x3 and the outcome y. The effect is 0.4 for everybody: no heterogeneity to
+      find. Use to see what the tests show when there is none.
+analyses:
+  - name: hetgeneric
+    title: Heterogeneous Effects (BLP, GATES, CLAN)
+    menuGroup: Heterogeneity
+    menuTitle: Heterogeneous Effects
+    menuSubtitle: Best linear predictor, sorted group effects and classification analysis
+    ns: hetfamily
+    category: analyses
+  - name: hetprofile
+    title: Effect Profile (CATE regression)
+    menuGroup: Heterogeneity
+    menuTitle: Effect Profile
+    menuSubtitle: How the effect changes with each covariate
+    ns: hetfamily
+    category: analyses
+  - name: hetrate
+    title: Priority Curve (RATE)
+    menuGroup: Heterogeneity
+    menuTitle: Priority Curve
+    menuSubtitle: Does ranking by predicted effect put the largest gains first?
+    ns: hetfamily
+    category: analyses
+  - name: hetpolicy
+    title: Treatment Rule Value
+    menuGroup: Heterogeneity
+    menuTitle: Treatment Rule
+    menuSubtitle: Value of treating the units with the largest predicted effect
+    ns: hetfamily
+    category: analyses
+usesNative: true
+minApp: 1.0.8
+
+...

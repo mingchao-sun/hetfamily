@@ -1,0 +1,106 @@
+---
+name: hetrate
+title: 'Priority Curve (RATE)'
+jrs: '1.1'
+
+items:
+    - name: guide
+      title: Data and setup guide
+      type: Html
+      visible: (showGuide)
+
+    - name: helpText
+      title: Method notes
+      type: Html
+      visible: (showHelp)
+
+    - name: notes
+      title: Notes
+      type: Html
+      visible: true
+
+    - name: fit
+      title: 'How well each learner predicts the effects'
+      type: Table
+      rows: 0
+      clearWith: [outcome, treat, control, armTreat, covs, prop, lrnLasso, lrnRidge, lrnEnet, lrnRf, lrnOls, nsplit, nboot, shareMain, level, lambdaRule, seed]
+      columns:
+        - name: learner
+          title: 'Learner'
+          type: text
+        - name: lam
+          title: 'Lambda (BLP)'
+          type: number
+        - name: lamb
+          title: 'Lambda-bar (GATES)'
+          type: number
+        - name: bg
+          title: 'Used for the ranking'
+          type: text
+
+    - name: rate
+      title: 'Rank-weighted average treatment effects'
+      type: Table
+      rows: 0
+      clearWith: [outcome, treat, control, armTreat, covs, prop, lrnLasso, lrnRidge, lrnEnet, lrnRf, lrnOls, nsplit, nboot, shareMain, level, lambdaRule, seed]
+      columns:
+        - name: what
+          title: ''
+          type: text
+        - name: est
+          title: 'Estimate'
+          type: number
+        - name: se
+          title: 'Std. error'
+          type: number
+        - name: lo
+          title: 'CI lower'
+          type: number
+        - name: hi
+          title: 'CI upper'
+          type: number
+        - name: p
+          title: 'p'
+          type: number
+          format: zto,pvalue
+
+    - name: toc
+      title: 'Gain from treating the top share first (TOC)'
+      type: Table
+      rows: 0
+      clearWith: [outcome, treat, control, armTreat, covs, prop, lrnLasso, lrnRidge, lrnEnet, lrnRf, lrnOls, nsplit, nboot, shareMain, level, lambdaRule, seed]
+      columns:
+        - name: q
+          title: 'Share treated'
+          type: number
+        - name: est
+          title: 'Estimate'
+          type: number
+        - name: se
+          title: 'Std. error'
+          type: number
+        - name: lo
+          title: 'CI lower'
+          type: number
+        - name: hi
+          title: 'CI upper'
+          type: number
+        - name: p
+          title: 'p'
+          type: number
+          format: zto,pvalue
+
+    - name: tocPlot
+      title: 'Treatment operating characteristic'
+      type: Image
+      width: 560
+      height: 360
+      renderFun: .plotToc
+      visible: (plot)
+      clearWith: [outcome, treat, control, armTreat, covs, prop, lrnLasso, lrnRidge, lrnEnet, lrnRf, lrnOls, nsplit, nboot, shareMain, level, lambdaRule, seed]
+
+refs:
+    - yadlowsky2021
+    - cddf2018
+
+...

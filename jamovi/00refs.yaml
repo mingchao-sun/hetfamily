@@ -1,0 +1,38 @@
+---
+refs:
+    cddf2018:
+        type: 'article'
+        author: Chernozhukov, V., Demirer, M., Duflo, E., & Fernandez-Val, I.
+        year: 2018
+        title: 'Generic machine learning inference on heterogeneous treatment effects in randomized experiments'
+        publisher: 'NBER Working Paper 24678'
+
+    genericml:
+        type: 'software'
+        author: Welz, M., Alfons, A., Demirer, M., & Chernozhukov, V.
+        year: 2022
+        title: 'GenericML: generic machine learning inference'
+        publisher: 'R package'
+
+    kitagawatetenov2018:
+        type: 'article'
+        author: Kitagawa, T., & Tetenov, A.
+        year: 2018
+        title: 'Who should be treated? Empirical welfare maximization methods for treatment choice'
+        publisher: 'Econometrica, 86(2), 591-616'
+
+    yadlowsky2021:
+        type: 'article'
+        author: Yadlowsky, S., Fleming, S., Shah, N., Brunskill, E., & Wager, S.
+        year: 2021
+        title: 'Evaluating treatment prioritization rules via rank-weighted average treatment effects'
+        publisher: 'arXiv:2111.07966'
+
+    semenova2021:
+        type: 'article'
+        author: Semenova, V., & Chernozhukov, V.
+        year: 2021
+        title: 'Debiased machine learning of conditional average treatment effects and other causal functions'
+        publisher: 'The Econometrics Journal, 24(2), 264-289'
+
+...

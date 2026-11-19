@@ -1,0 +1,109 @@
+title: 'Priority Curve (RATE)'
+name: hetrate
+jus: '3.0'
+stage: 0
+compilerMode: tame
+children:
+    - type: VariableSupplier
+      persistentItems: false
+      stretchFactor: 1
+      children:
+          - type: TargetLayoutBox
+            label: 'Outcome'
+            children:
+                - type: VariablesListBox
+                  name: outcome
+                  isTarget: true
+                  height: small
+                  maxItemCount: 1
+          - type: TargetLayoutBox
+            label: 'Treatment (arms)'
+            children:
+                - type: VariablesListBox
+                  name: treat
+                  isTarget: true
+                  height: small
+                  maxItemCount: 1
+          - type: TargetLayoutBox
+            label: 'Covariates'
+            children:
+                - type: VariablesListBox
+                  name: covs
+                  isTarget: true
+                  height: small
+          - type: TargetLayoutBox
+            label: 'Known propensity score (optional)'
+            children:
+                - type: VariablesListBox
+                  name: prop
+                  isTarget: true
+                  height: small
+                  maxItemCount: 1
+    - type: CollapseBox
+      label: 'Treatment groups'
+      collapsed: true
+      children:
+          - type: TextBox
+            name: control
+            label: 'Control group value'
+            format: string
+          - type: TextBox
+            name: armTreat
+            label: 'Treatment group value'
+            format: string
+    - type: CollapseBox
+      label: 'Learners'
+      collapsed: false
+      children:
+          - type: CheckBox
+            name: lrnLasso
+          - type: CheckBox
+            name: lrnRidge
+          - type: CheckBox
+            name: lrnEnet
+          - type: CheckBox
+            name: lrnRf
+          - type: CheckBox
+            name: lrnOls
+          - type: ComboBox
+            name: lambdaRule
+    - type: CollapseBox
+      label: 'Estimation'
+      collapsed: false
+      children:
+          - type: TextBox
+            name: nsplit
+            label: 'Number of sample splits'
+            format: number
+          - type: TextBox
+            name: nboot
+            label: 'Bootstrap samples per split'
+            format: number
+          - type: TextBox
+            name: shareMain
+            label: 'Share of the sample used for estimation'
+            format: number
+          - type: TextBox
+            name: level
+            label: 'Confidence level (%)'
+            format: number
+          - type: TextBox
+            name: seed
+            label: 'Random seed'
+            format: number
+    - type: CollapseBox
+      label: 'Output tables'
+      collapsed: true
+      children:
+          - type: CheckBox
+            name: plot
+    - type: CollapseBox
+      label: 'Output'
+      collapsed: true
+      children:
+          - type: CheckBox
+            name: showHelp
+            label: 'Method notes'
+          - type: CheckBox
+            name: showGuide
+            label: 'Data and setup guide'

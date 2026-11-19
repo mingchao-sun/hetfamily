@@ -1,0 +1,19 @@
+Package: hetfamily
+Type: Package
+Title: Heterogeneous Treatment Effects Family for jamovi
+Version: 1.0.0
+Author: Mingchao Sun
+Maintainer: Mingchao Sun <mingchao.sun@hotmail.com>
+URL: https://github.com/mingchao-sun/hetfamily
+BugReports: https://github.com/mingchao-sun/hetfamily/issues
+Description: Generic machine learning inference on heterogeneous treatment effects in randomized
+    experiments for jamovi (Chernozhukov, Demirer, Duflo and Fernandez-Val): best linear predictor,
+    sorted group average treatment effects, classification analysis, and the value of a treatment rule.
+License: GPL-3
+Encoding: UTF-8
+Imports:
+    jmvcore (>= 2.3.4),
+    R6,
+    ggplot2,
+    glmnet,
+    ranger
