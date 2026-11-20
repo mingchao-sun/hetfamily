@@ -26,9 +26,9 @@ jmvtools::install(home = "C:/Program Files/jamovi 28.17.0.0")
 ```
 
 ## Use from R (Rj editor, scripts)
-Every analysis is also an R function. The functions are not exported, so call them as `module:::function`, and pass `NULL` for the arguments you do not use (they have no default values). For example, after installing the module,
+Every analysis is also an R function. Pass `NULL` for the arguments you do not use, because they have no default values. For example, after installing the module,
 ```r
-hetfamily:::hetgeneric(data = d, outcome = "y", treat = "arm", covs = c("age", "female", "income", "baseline"), prop = NULL, nsplit = 100)
+hetfamily::hetgeneric(data = d, outcome = "y", treat = "arm", covs = c("age", "female", "income", "baseline"), prop = NULL, nsplit = 100)
 ```
 
 ## Data format
